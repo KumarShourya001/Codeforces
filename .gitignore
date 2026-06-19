@@ -1,0 +1,31 @@
+# Compiled binaries
+*.out
+*.exe
+a.out
+
+# Object / intermediate files
+*.o
+*.obj
+
+# Precompiled headers (from #include <bits/stdc++.h>)
+*.gch
+*.pch
+
+# Debug symbols
+*.dSYM/
+
+# Editor / IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Local test I/O (optional — remove if you want to commit test cases)
+input.txt
+output.txt
+in.txt
+out.txt
