@@ -5,12 +5,31 @@ using namespace std;
 long long ghost(vector<long long>a,vector<long long>b){
     int n=a.size();
     long long cnt=0;
-    vector<pair<int,int>>vec;
+    vector<int>vec;
     for(int i=0;i<n;i++){
-        vec.push_back({a[i],i});
+        vec.push_back(a[i]);
     }
+    sort(vec.begin(),vec.end());
     for(int i=0;i<n;i++){
-        
+        if(vec[i]>b[i]){
+            return -1;
+        }
+    }
+
+    for(int i=0;i<n;i++){
+        int swap=0;
+        if(a[i]>b[i]){
+            int j=i;
+            while( j<n && a[j]>b[i]){
+                cnt++;
+                j++;
+            }
+            int temp=a[j];
+            for(int k=j;k>=i;k--){
+                a[k]=a[k-1];
+            }
+            a[i]=temp;
+        }
     }
     return cnt;
 }
