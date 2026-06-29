@@ -4,6 +4,29 @@ using namespace std;
 
 using namespace std;
 
+int Seats(int n,string s){
+
+    int cnt=0;
+    
+    for(int i=0;i<n;i++){
+         if(s[i]=='1'){cnt++;continue;}
+
+     int lft=i;
+    
+     while( i<n && s[i]=='0')i++;
+     int L=i-lft;
+     int blocked=0;
+     if(lft-1>=0  && s[lft-1]=='1') blocked++;
+    if(i<n && s[i]=='1')blocked++;
+    cnt+=(L+2-blocked)/3;
+    i--;
+     
+    }
+   
+    return cnt;
+}
+
+
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
@@ -14,26 +37,8 @@ int main() {
         int n;
         string s;
         cin >> n >> s;
-
-        int ans = 0;
-        for (char c : s)
-            if (c == '1') ans++;
-
-        for (int i = 0; i < n; i++) {
-
-            if (s[i] == '0') {
-                bool left_ok = (i == 0 || s[i - 1] == '0');
-                bool right_ok = (i + 1 < n && s[i + 1] == '0');
-
-                if (left_ok && right_ok) {
-                    s[i + 1] = '1';
-                    ans++;
-                    i += 2; 
-                }
-            }
-        }
-
-        cout << ans << "\n";
+        int ans=Seats(n,  s);
+        cout<<ans<<endl;
     }
     return 0;
 }
