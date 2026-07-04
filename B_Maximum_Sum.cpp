@@ -3,8 +3,6 @@
 using namespace std;
 
 
-using namespace std;
-
 long long maxSum(vector<long long> nums, int k){
     sort(nums.begin(), nums.end());
     int n = nums.size();
