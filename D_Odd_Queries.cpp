@@ -4,21 +4,24 @@
 using namespace std;
 
 vector<string> solve(int n, vector<long long>& a, vector<array<long long,3>>& queries){
+    
+    vector<long long>pre(n+1,0);
     long long sum=0;
     for(int i=0;i<a.size();i++){
         sum+=a[i];
+        pre[i+1]=sum;
     }
     vector<string>vec;
     for(int i=0;i<queries.size();i++){
         int strt=queries[i][0];
         int end=queries[i][1];
         long long elem=queries[i][2];
-        long long k=sum;
-        for(int j=strt-1;j<end;j++){
-            k+=(elem-a[j]);
-        }
+        
+        long long k=sum -(pre[end]-pre[strt-1])+(end-strt+1)*elem;
+        
         if(k%2!=0)vec.push_back("YES");
         else vec.push_back("NO");
+        
     }
     return vec;
 }
