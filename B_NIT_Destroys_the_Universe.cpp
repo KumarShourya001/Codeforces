@@ -3,7 +3,21 @@
 using namespace std;
 
 long long solve(vector<long long>&a,int n){
-    
+    int ans=0;
+    int j=n-1;
+    int i=0;
+    bool val=false;
+    while(i<n  && a[i]==0)i++;
+    while( j>=0&& a[j]==0)j--;
+    if(i>j)return 0;
+    for( ;i<=j;i++){
+         if(a[i]==0){
+            val=true;
+        }
+    }
+    if(val==false)return 1;
+    return 2;
+
 }
 
 
