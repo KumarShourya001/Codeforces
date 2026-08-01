@@ -3,21 +3,18 @@
 using namespace std;
 
 string solve(vector<int>&a ,vector<int>&b){
-    int n=a.size();
+   int n=a.size();
     int m=b.size();
     sort(a.begin(),a.end());
     sort(b.begin(),b.end());
-    int j=0;
-    int i=0;
-    while(i<n && j<m){
-        int k=i+1;
-        while(k<n && a[k]<b[j])k++;
-        i=k-1;
-        i++;
-        j++;
+    if(2*m>n) return "NO";
+    for(int j=0;j<m;j++){
+        if(a[j]>=b[j]) return "NO";
     }
-    if(j>=m)return "Yes";
-    return "No";
+    for(int j=0;j<m;j++){
+        if(a[n-m+j]<=b[j]) return "NO";
+    }
+    return "YES";
 }
 
 int main() {
