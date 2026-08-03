@@ -13,7 +13,7 @@ string solve(string s){
     }
 
     if(ab == ba) return s;
-
+   
     s[0] = s[n - 1];
     return s;
 }
