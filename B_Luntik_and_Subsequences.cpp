@@ -3,7 +3,22 @@
 using namespace std;
 
 long long solve(vector<long long>a,int n){
+    int cntone=0;
+    int cntzero=0;
+    long long sum=0;
+    for(int i=0;i<n;i++){
+        if(a[i]==1)cntone++;
+        if(a[i]==0)cntzero++;
+        sum+=a[i];
+
+    }
+
+    int dgts=n-cntzero-cntone;
+    if(cntone<=0)return 0;
+    if(cntzero==0)return cntone;
+ 
     
+    return cntone*(1LL<<cntzero);
 }
 
 int main(){
