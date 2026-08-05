@@ -3,16 +3,10 @@
 using namespace std;
 
 int solve(int n,vector<int>&a){
-    int idx=0;
-    int mx=INT_MIN;
-    int mn=INT_MAX;
+   
     int ans=a[0];
     for(int i=0;i<n;i++){
-        if(a[i]>mx){
-            mx=a[i];
-            idx=i;
-        }
-        mn=min(mn,a[i]);
+        
         ans=ans&a[i];
     }
     return ans;
