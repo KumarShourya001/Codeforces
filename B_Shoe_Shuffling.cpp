@@ -7,7 +7,7 @@ vector<long long>solve(vector<long long>s,int n){
     vector<long long>ans(n,0);
     int i=0;
     while(i<n){
-        int fst=s[i];
+        long long fst=s[i];
         int j=i;
         while( j<n && s[j]==fst)j++;
         j--;
