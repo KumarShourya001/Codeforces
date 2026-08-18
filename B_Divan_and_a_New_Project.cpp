@@ -24,7 +24,7 @@ pair<long long, vector<int>> solve(vector<int> &a, int n) {
         }
         else {
         ans[vec[i].second]=r;
-        sum+=2LL*(abs(r)*vec[i].first);
+        sum+=2LL*abs(r)*vec[i].first;
         r--;
         }
     }
