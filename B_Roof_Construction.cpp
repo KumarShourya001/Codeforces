@@ -1,23 +1,17 @@
 #include <bits/stdc++.h>
-#include <vector>
 using namespace std;
-
-vector<int>solve(int n){
-    vector<int>ans(n,0);
-    
-}
 
 int main() {
     ios::sync_with_stdio(false);
-    cin.tie(nullptr);
+    cin.tie(0);
     int t;
     cin >> t;
     while (t--) {
         int n;
         cin >> n;
-        vector<int> ans=solve(n);
-        for(auto it:ans)cout<<it<<" ";
-        cout<<endl;
+        int s = 1 << (31 - __builtin_clz(n - 1));
+        for (int i = s - 1; i >= 0; i--) cout << i << ' ';
+        for (int i = s; i < n; i++) cout << i << ' ';
+        cout << "\n";
     }
-    return 0;
 }
