@@ -14,10 +14,7 @@ long long solve(vector<pair<long long,long long>> &p, int n, int k, int a, int b
         mnend=min(mnend,abs(xend-p[i].first)+abs(yend-p[i].second));
     }
     long long dir=abs(xend-xstrt)+abs(yend-ystrt);
-    // for(int i=k;i<n;i++){
-    //     if(i==a || i==b)continue;
-    //     dir=min(dir,abs(xstrt-p[i].first)+abs(xend-p[i].first)+abs(ystrt-p[i].second)+abs(yend-p[i].second));
-    // }
+   
     if(mnstr==LLONG_MAX)return dir;
     return min(mnstr+mnend,dir);
 }
