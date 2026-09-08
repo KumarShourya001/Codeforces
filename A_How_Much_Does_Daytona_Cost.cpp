@@ -5,6 +5,7 @@ string solve(int n, int k, vector<int>& a){
     for(int i = 0; i < n; i++){
         if(a[i] == k) return "YES";
     }
+    
     return "NO";
 }
 
