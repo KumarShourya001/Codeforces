@@ -1,18 +1,19 @@
 #include <bits/stdc++.h>
+#include <vector>
 using namespace std;
 
 vector<int> solve(int n, int q, vector<int>& a, vector<int>& t) {
     vector<int> pos(51, 0);
-    for (int i = n - 1; i >= 0; i--) pos[a[i]] = i + 1;
-    vector<int> ans(q);
-    for (int i = 0; i < q; i++) {
-        int c = t[i];
-        int p = pos[c];
-        ans[i] = p;
-        for (int j = 1; j <= 50; j++) {
-            if (pos[j] > 0 && pos[j] < p) pos[j]++;
+    vector<int>ans(q);
+    for(int i=n-1;i>=0;i--)pos[a[i]]=i+1;
+    for(int i=0;i<q;i++){
+        int idx=t[i];
+        int p=pos[idx];
+        ans[i]=p;
+        for(int j=1;j<=50;j++){
+            if(pos[j]>0 && pos[j]<p)pos[j]++;
         }
-        pos[c] = 1;
+        pos[idx]=1;
     }
     return ans;
 }
