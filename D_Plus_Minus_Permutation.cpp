@@ -8,17 +8,14 @@ long long solve(long long n, long long x, long long y) {
     long long numy=n/y;
     long long cmn=n/(lcm(x,y));
     long long v1=0;
-    long long k=n;
-    for(int i=0;i<numx-cmn;i++){
-        v1+=k;
-        k--;
-    }
-    k=1;
-    for(int i=0;i<numy-cmn;i++){
-        v1-=k;
-        k++;
-    }
-    return v1;
+    long long v2=0;
+    
+    numx-=cmn;
+    numy-=cmn;
+    long long k=n-numx;
+    v1=(numy*(numy+1))/2;
+    v2=((n*(n+1))/2)-((k*(k+1))/2);
+    return v2-v1;
 }
 
 int main() {
