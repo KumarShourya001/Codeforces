@@ -4,9 +4,6 @@
 #include <vector>
 using namespace std;
 
-
-
-
 int solve(int n, int k, vector<int>& c) {
     map<int,vector<int>>mp;
     vector<int>vec(k+1,-1);
